@@ -41,18 +41,18 @@ public class RequestHandler implements Runnable {
             String clientAddress = inetAddress.getHostAddress();
             System.out.println("Connection from " + clientAddress);
             
-                 BufferedReader AnimalName
-          = new BufferedReader(new InputStreamReader(socket.getInputStream()));
+            String name = inputStream.readUTF();
+            System.out.println("\tAnimal name: "+ name);
             outputStream.writeUTF("1"); // id
-            outputStream.writeUTF("dog"); // specees
-            outputStream.writeUTF("Male"); //gender
             outputStream.writeUTF("Lucky"); // name
+            outputStream.writeUTF("dog"); // specees
+            outputStream.writeUTF("male"); //gender
             outputStream.writeInt(2); // age
             outputStream.writeBoolean(false); // fixed
             outputStream.writeInt(4); // legs
             outputStream.writeDouble(99.9); // weight
-            outputStream.writeUTF("2020-12-05"); // date added
-            outputStream.writeUTF("2020-12-05 17:59:59"); // last feeding time
+            outputStream.writeUTF("2020-12-11"); // date added
+            outputStream.writeUTF("2020-12-11 17:59:59"); // last feeding time
             outputStream.flush();
 
             
